@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dheeraj app</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .card-header {
+            background-color: #8098ff;
+            position: fixed;
+            top: 0;
+            height: 50px;
+            width: 100%;
+            box-shadow: 2px 2px 2px 2px;
+        }
+
+        .sidebarmenu {
+            cursor: pointer;
+        }
+
+        .sidebarmenu, .logo {
+            padding-left: 10px;
+            padding-top: 5px;
+            font-size: 25px;
+            line-height: 50px;
+        }
+
+        .side1 {
+            background-color: blue;
+            position: absolute;
+            height: 100%;
+            width: 80%;
+            border-right: 1px solid white;
+            overflow-y: auto; /* Add scroll behavior for side1 */
+        }
+
+        .sidebar {
+            background-color: #303030b5;
+            display: container;
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            border-right: 1px solid white;
+            transform: translateX(-100%);
+            transition: 0.3s;
+            top: 0;
+        }
+
+        .open {
+            transform: translateX(0);
+        }
+
+        .banner img {
+            width: 100%;
+            position: relative;
+        }
+
+        .page {
+            display: block;
+            scroll-behavior: auto;
+        }
+
+        .page ul li {
+            list-style: none;
+            padding: 20px;
+        }
+
+        .page ul li a {
+            text-decoration: none;
+            font-size: 20px;
+            width: 100%;
+            padding: 20px;
+            color: white;
+        }
+
+        .main1 {
+            cursor: pointer;
+        }
+
+        input {
+            margin-top: 100px;
+        }
+
+        #srch {
+            width: 100%;
+            height: 50px;
+            border-radius: 20px;
+            font-size: 20px;
+            padding: 10px;
+            border: none;
+            border-bottom: 6px solid black;
+        }
+
+        #wb, #wb1 {
+            margin-top: 10px;
+            position: absolute;
+            border-radius: 20px;
+            padding: 10px;
+            font-size: 20px;
+            box-shadow: 2px 6px red;
+            border: 0;
+        }
+
+        #wb {
+            width: 250px;
+            height: 30px;
+        }
+
+        #wb1 {
+            right: 0px;
+        }
+
+        .side2 {
+            position: fixed;
+            height: 100%;
+            width: 20%;
+            right: 0px;
+            top: 0px;
+        }
+        input:focus {
+          outline: none;
+}
+    </style>
+</head>
+<body>
+<div class="main1">
+    <div class="card-header">
+        <span class="sidebarmenu">&#9776</span>
+        <span class="logo">Dheeraj Browser</span>
+    </div>
+    <div>
+        <form action="https://www.google.com/search" method="get">
+            <input type="search" name="q" id="srch" placeholder="Search here...">
+        </form>
+        <br>
+        <br>
+        <h2 align="center" font="#5565aace">Chat without saving number </h2>
+        <input type="tel" name="tel" id="wb" placeholder="Write number here...">
+        <input type="button" value="Whatsapp" id="wb1" onclick="wb1()">
+    </div>
+    <a href="http://www.pmsonline.bih.nic.in/pmsedubcebc2223/(S(gvsy1pclszgmgpht3ebypetc))/pms/studentApplicationStatus.aspx"
+       style="margin-left:100px; margin-top:50px; position:fixed;top:400px;">post metric scholarship</a>
+</div>
+<div class="sidebar">
+    <div class="side1">
+        <div class="banner">
+            <img src="Creation with dheeraj.png" alt="banner">
+        </div>
+        <div class="page">
+            <ul>
+                <li><a href="https://youtube.com">YouTube</a></li>
+                <li><a href="https://www.facebook.com">Facebook</a></li>
+                <li><a href="https://www.instagram.com">Instagram</a></li>
+                <li><a href="https://twitter.com/login?lang=en">Twitter</a></li>
+                <li><a href="https://t.me/creationwithdheeraj">Telegram</a></li>
+            </ul>
+        </div>
+        <div class="side2">
+
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    document.querySelector('.sidebarmenu').addEventListener('click', function () {
+        document.querySelector('.sidebar').classList.toggle('open');
+    });
+
+    document.querySelector('.side2').addEventListener('click', function () {
+        document.querySelector('.sidebar').classList.toggle('open');
+    });
+
+    function wb1() {
+        let number = document.querySelector('#wb');
+        window.open('https://api.whatsapp.com/send/?phone=91' + number.value + '&text&type=phone_number&app_absent=0');
+    }
+
+    function closeSide1() {
+        document.querySelector('.sidebar').classList.remove('open');
+    }
+</script>
+</html>
